@@ -12,6 +12,8 @@ console.log(partialPath)
 app.set('views', viewspath)
 app.use(express.static(path.join(__dirname,'../public')))
 hbs.registerPartials(partialPath);
+
+const port = process.env.PORT || 4000;
 // app.get('/', (req, res)=>{
 //     res.send('<h1>hello express<h1>');
     
@@ -56,6 +58,6 @@ app.get('**', (req, res)=>{
     
 } );
 
-app.listen(4000, (err, result)=> {
+app.listen(port, (err, result)=> {
     console.log('server is start on port 3000');
 })
